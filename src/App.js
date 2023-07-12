@@ -1,10 +1,15 @@
-import React from "react";
+import React from 'react';
 import './App.css';
-//Comment
+import { BrowserRouter } from 'react-router-dom';
+import Navbar from './modules/navbar/Navbar';
+import AppRouter from './modules/appRouter/AppRouter';
 
-function App() {
+const App = () => {
   return (
-    <>Chat-quiz project</>
+      <BrowserRouter>
+          <Navbar />
+          <AppRouter />
+      </BrowserRouter>
   );
 }
 
