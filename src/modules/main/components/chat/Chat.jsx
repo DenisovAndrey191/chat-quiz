@@ -1,13 +1,17 @@
 import React, { useEffect, useRef } from 'react';
-import chatBackgroundImage from '../../../../assets/images/chatroom.png';
-
-import CustomTextField from '../../../customComponents/customTextField/CustomTextField';
 import {
     ChatContainer,
     MessagesWrapper,
 } from './styledComponents';
+import UserMessage from './components/userMessage/UserMessage';
+import CustomTextField from '../../../customComponents/customTextField/CustomTextField';
+import chatBackgroundImage from '../../../../assets/images/chatroom.png';
 
-const Chat = () => {
+const Chat = ({
+    userId,
+    messages,
+    sendMessage,
+}) => {
     const messageEl = useRef(null);
 
     useEffect(() => {
@@ -24,11 +28,18 @@ const Chat = () => {
             chatBackgroundImage={chatBackgroundImage}
         >
             <MessagesWrapper ref={messageEl}>
+                {messages?.map((message) =>
+                    <UserMessage
+                        key={message.createdAt}
+                        userId={userId}
+                        message={message}
+                    />
+                )}
             </MessagesWrapper>
-                <CustomTextField
-                    type={'text'}
-                    sendMessage={() => console.log('send Message')}
-                />
+            <CustomTextField
+                type={'text'}
+                sendMessage={sendMessage}
+            />
         </ChatContainer>
     );
 };
