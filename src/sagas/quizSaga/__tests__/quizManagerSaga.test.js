@@ -39,7 +39,7 @@ describe('setIsShowResults', () => {
     it('should put clearUserResultsStore', () => {
         expect(generator.next().value)
             .toEqual(
-                put(actions.clearUserResultsStore())
+                put(actions.clearUsersResultsStore())
             );
     });
 
