@@ -5,7 +5,7 @@ import {
 } from './styledComponents';
 import UserMessage from './components/userMessage/UserMessage';
 import CustomTextField from '../../../customComponents/customTextField/CustomTextField';
-import chatBackgroundImage from '../../../../assets/images/chatroom.png';
+import chatBackgroundImage from '../../../../assets/images/3411151.webp';
 
 const Chat = ({
     userId,
